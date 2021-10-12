@@ -31,6 +31,18 @@ namespace JobFinder.Data.Configurations
                 .WithMany(j => j.SavedJobs);
 
             builder
+                .HasMany(u => u.EmploymentTypes)
+                .WithMany(j => j.Jobs);
+
+            builder
+                .HasMany(u => u.ExperienceLevels)
+                .WithMany(j => j.Jobs);
+
+            builder
+                .HasMany(u => u.Technologies)
+                .WithMany(j => j.Jobs);
+
+            builder
                 .ToTable("Jobs");
         }
     }

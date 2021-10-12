@@ -13,6 +13,10 @@ namespace JobFinder.Data
         public DbSet<Job> Jobs { get; set; }
         public DbSet<Organization> Organizations { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<ReqResBon> ReqResBons { get; set; }
+        public DbSet<Technology> Technologies { get; set; }
+        public DbSet<ExperienceLevel> ExperienceLevels { get; set; }
+        public DbSet<EmploymentType> EmploymentTypes { get; set; }
 
         public JobFinderDbContext(DbContextOptions options) : base(options)
         {
@@ -29,6 +33,9 @@ namespace JobFinder.Data
 
             builder
                 .ApplyConfiguration(new UserConfiguration());
+
+            builder
+                .ApplyConfiguration(new ReqResBonConfiguration());
         }
 
     }

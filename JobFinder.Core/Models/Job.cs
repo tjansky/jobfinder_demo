@@ -22,5 +22,9 @@ namespace JobFinder.Core.Models
         public int OrganizationId { get; set; }
         public virtual Organization Organization { get; set; }
         public virtual ICollection<User> SavedUsers { get; set; }
+        public virtual ICollection<ReqResBon> ReqResBons { get; set; }
+        public virtual ICollection<Technology> Technologies { get; set; }
+        public virtual ICollection<ExperienceLevel> ExperienceLevels { get; set; }
+        public virtual ICollection<EmploymentType> EmploymentTypes { get; set; }
     }
 }
