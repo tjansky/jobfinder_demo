@@ -2,7 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using JobFinder.Core;
+using JobFinder.Core.Services;
 using JobFinder.Data;
+using JobFinder.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -29,6 +32,9 @@ namespace JobFinder.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddTransient<IJobService, JobService>();
+
             services.AddDbContext<JobFinderDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Default"), x => x.MigrationsAssembly("JobFinder.Data")));
 
             services.AddControllers();
