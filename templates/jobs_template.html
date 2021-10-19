@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- font awsome cdn -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+
+        .job-form-container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .job-aditional-inputs{
+            border: solid black 1px;
+            width: 800px;
+            height: 400px;
+
+            display: flex;
+            gap: 20px;
+        }
+
+        .job-aditional-left{
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .job-aditional-right{
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .job-card-container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .job-card{
+            height: 180px;
+            width: 800px;
+            border: solid black 1px;
+            display: flex;
+        }
+
+        .job-pagination{
+            display: flex;
+            gap: 10px;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div class="job-form-container">
+        <div>
+            <input type="text">
+            <button>Search</button>
+        </div>
+
+        <div class="job-aditional-inputs">
+            <div class="job-aditional-left">
+                <div>
+                    <div>
+                        Remote <input type="checkbox" name="" id="">
+                    </div>
+                    <div>
+                        Equity <input type="checkbox" name="" id="">
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        Ecperience level
+                    </div>
+                    <div>
+                        <div>
+                            Intern <input type="checkbox" name="" id="">
+                        </div>
+                        <div>
+                            Junior <input type="checkbox" name="" id="">
+                        </div>
+                        <div>
+                            Mid <input type="checkbox" name="" id="">
+                        </div>
+                        <div>
+                            Senior <input type="checkbox" name="" id="">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        Organization
+                    </div>
+                    <select name="" id="">
+                        <option value="">HiveTech</option>
+                        <option value="">Infinum</option>
+                        <option value="">HrProdigy</option>
+                        <option value="">Microblink</option>
+                        <option value="">Fina</option>
+                        <option value="">Serengeti</option>
+                        <option value="">AccessHr</option>
+                    </select>
+                </div>
+            </div>
+            <div class="job-aditional-right">
+                <div>
+                    <div>Tech you like</div>
+                    <div>
+                        <select name="" id="">
+                            <option value="">.Net</option>
+                            <option value="">SQL</option>
+                            <option value="">JavaScrpt</option>
+                            <option value="">ReactJs</option>
+                            <option value="">VueJS</option>
+                            <option value="">Java</option>
+                            <option value="">MySql</option>
+                            <option value="">Git</option>
+                            <option value="">TypeScript</option>
+                            <option value="">Go</option>
+                            <option value="">Rust</option>
+                        </select>
+                        <div>
+                            <button>Add tech</button>
+                        </div>
+                        <div>.net Angular SQL</div>
+                    </div>
+                </div>
+                <div>
+                    <div>Job Type</div>
+                    <div>
+                        <div>
+                            Full time <input type="checkbox" name="" id="">
+                        </div>
+                        <div>
+                            Part time <input type="checkbox" name="" id="">
+                        </div>
+                        <div>
+                            Contract <input type="checkbox" name="" id="">
+                        </div>
+                        <div>
+                            Internship <input type="checkbox" name="" id="">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div>Min Compensation</div>
+                    <div>
+                        <input type="number">$
+                    </div>
+                </div>
+                <button>Apply Filters</button>
+            </div>
+            
+        </div>
+
+    </div>
+
+    <br> <hr> <br>
+
+    <div class="job-card-container">
+        <div class="job-card">
+            <div>
+                <div>
+                    Slika
+                </div>
+                <div>
+                    <div>Angular Developer</div>
+                    <div>Infinum - Zagreb, Croatia</div>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <span>.Net</span>
+                    <span>Angular</span>
+                    <span>Css</span>
+                    <span>WebForms</span>
+                </div>
+            </div>
+        </div>
+        <div class="job-card">
+            <div>
+                <div>
+                    Slika
+                </div>
+                <div>
+                    <div>Angular Developer</div>
+                    <div>Infinum - Zagreb, Croatia</div>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <span>.Net</span>
+                    <span>Angular</span>
+                    <span>Css</span>
+                    <span>WebForms</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="job-pagination">
+        <div>
+            <button>1</button>
+        </div>
+        <div>
+            <button>2</button>
+        </div>
+        <div>
+            <button>3</button>
+        </div>
+        <div>
+            <button>4</button>
+        </div>
+        <div>
+            ...
+        </div>
+        <div>
+            <button>108</button>
+        </div>
+        <div>
+            <button>next></button>
+        </div>
+    </div>
+    
+</body>
+</html>
