@@ -18,6 +18,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 
 
+
 namespace JobFinder.Api
 {
     public class Startup
@@ -34,6 +35,8 @@ namespace JobFinder.Api
         {
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddTransient<IJobService, JobService>();
+
+            services.AddAutoMapper(typeof(Startup));
 
             services.AddDbContext<JobFinderDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Default"), x => x.MigrationsAssembly("JobFinder.Data")));
 
