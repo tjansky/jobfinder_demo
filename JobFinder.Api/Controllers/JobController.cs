@@ -48,7 +48,15 @@ namespace JobFinder.Api.Controllers
 
 
         // DeleteById
+        [HttpDelete("{id}")]
+        public async Task<ActionResult> DeleteById(int id)
+        {
+            Job job = await jobService.GetById(id);
 
+            await jobService.Delete(job);
+            
+            return Ok("Nothing for now, guess it was deleted");
+        }
 
         // SetInactiveByID
 

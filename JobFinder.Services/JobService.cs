@@ -17,14 +17,26 @@ namespace JobFinder.Services
             this._unitOfWork = unitOfWork;
         }
 
-        public Task<IEnumerable<Job>> GetAllWithOrg()
+        public async Task<IEnumerable<Job>> GetAllWithOrg()
         {
-            return _unitOfWork.Jobs.GetAllWithOrgAsync();
+            return await _unitOfWork.Jobs.GetAllWithOrgAsync();
         }
 
-        public Task<Job> GetByIdWithAll(int id)
+        public async Task<Job> GetByIdWithAll(int id)
         {
-            return _unitOfWork.Jobs.GetByIdWithAllAsync(id);
+            return await _unitOfWork.Jobs.GetByIdWithAllAsync(id);
         }
+
+        public async Task<Job> GetById(int id)
+        {
+            return await _unitOfWork.Jobs.GetByIdAsync(id);
+        }
+
+        public async Task Delete(Job job)
+        {
+            _unitOfWork.Jobs.Remove(job);
+            await _unitOfWork.CommitAsync();
+        }
+        
     }
 }

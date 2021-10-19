@@ -10,5 +10,7 @@ namespace JobFinder.Core.Services
     {
         Task<IEnumerable<Job>> GetAllWithOrg();
         Task<Job> GetByIdWithAll(int id);
+        Task<Job> GetById(int id);
+        Task Delete(Job job);
     }
 }
