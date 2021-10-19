@@ -37,6 +37,14 @@ namespace JobFinder.Services
             _unitOfWork.Jobs.Remove(job);
             await _unitOfWork.CommitAsync();
         }
-        
+
+        public async Task<Job> ChangeActivity(Job job, bool activity)
+        {
+            job.Active = activity;
+            await _unitOfWork.CommitAsync();
+            
+            return job;
+        }
+
     }
 }

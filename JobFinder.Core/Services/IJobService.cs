@@ -12,5 +12,6 @@ namespace JobFinder.Core.Services
         Task<Job> GetByIdWithAll(int id);
         Task<Job> GetById(int id);
         Task Delete(Job job);
+        Task<Job> ChangeActivity(Job job, bool activity);
     }
 }

@@ -58,10 +58,21 @@ namespace JobFinder.Api.Controllers
             return Ok("Nothing for now, guess it was deleted");
         }
 
-        // SetInactiveByID
+        // SetInactiveByID 
+        // TODO: testirati
+        [HttpPost("changeActivity/{id}/{activity}")]
+        public async Task<ActionResult> ChangeActivity(int id, bool activity)
+        {
+            Job job = await jobService.GetById(id);
+
+            return Ok(await jobService.ChangeActivity(job, activity));
+        }
 
 
         // UpdateById (this is where will be requirements updated/added/deleted and what tech and empl type is job)
+
+
+        // Create
 
 
     }
