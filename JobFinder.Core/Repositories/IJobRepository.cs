@@ -9,5 +9,6 @@ namespace JobFinder.Core.Repositories
     public interface IJobRepository : IRepository<Job>
     {
         Task<IEnumerable<Job>> GetAllWithOrgAsync();
+        Task<Job> GetByIdWithAllAsync(int id);
     }
 }

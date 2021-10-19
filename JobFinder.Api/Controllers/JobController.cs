@@ -36,6 +36,15 @@ namespace JobFinder.Api.Controllers
 
 
         // GetByIdWith + (org, tech, req, res, bon)
+        [HttpGet("{id}")]
+        public async Task<ActionResult<IEnumerable<JobWithAllDto>>> GetById(int id)
+        {
+            Job job = await jobService.GetByIdWithAll(id);
+
+            var detailedJobDto = mapper.Map<Job, JobWithAllDto>(job);
+            
+            return Ok(detailedJobDto);
+        }
 
 
         // DeleteById

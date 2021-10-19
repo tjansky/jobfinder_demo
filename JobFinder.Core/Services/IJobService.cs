@@ -9,5 +9,6 @@ namespace JobFinder.Core.Services
     public interface IJobService
     {
         Task<IEnumerable<Job>> GetAllWithOrg();
+        Task<Job> GetByIdWithAll(int id);
     }
 }

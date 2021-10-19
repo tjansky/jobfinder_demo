@@ -19,6 +19,17 @@ namespace JobFinder.Data.Repositories
             return await JobFinderDbContext.Jobs.Include(x => x.Organization).ToListAsync();
         }
 
+        public async Task<Job> GetByIdWithAllAsync(int id)
+        {
+            return await JobFinderDbContext.Jobs
+                        .Include(x => x.Technologies)
+                        .Include(x => x.Organization)
+                        .Include(x => x.ExperienceLevels)
+                        .Include(x => x.EmploymentTypes)
+                        .Include(x => x.ReqResBons)
+                        .FirstOrDefaultAsync(x => x.Id == id);
+        }
+
         private JobFinderDbContext JobFinderDbContext
         {
             get { return Context as JobFinderDbContext; }

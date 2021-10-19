@@ -21,5 +21,10 @@ namespace JobFinder.Services
         {
             return _unitOfWork.Jobs.GetAllWithOrgAsync();
         }
+
+        public Task<Job> GetByIdWithAll(int id)
+        {
+            return _unitOfWork.Jobs.GetByIdWithAllAsync(id);
+        }
     }
 }

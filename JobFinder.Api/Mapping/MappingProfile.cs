@@ -18,6 +18,8 @@ namespace JobFinder.Api.Mapping
             CreateMap<EmploymentType, EmploymentTypeDto>();
             CreateMap<Technology, TechnologyDto>();
             CreateMap<ExperienceLevel, ExperienceLevelDto>();
+            CreateMap<ReqResBon, ReqResBonDto>();
+            CreateMap<Job, JobWithAllDto>();
 
             // Resource to Domain
 
