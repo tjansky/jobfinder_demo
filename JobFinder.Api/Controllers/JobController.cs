@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using JobFinder.Api.Dtos;
 using JobFinder.Core.Models;
+using JobFinder.Core.Models.Settings;
 using JobFinder.Core.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -23,8 +24,18 @@ namespace JobFinder.Api.Controllers
             this.mapper = mapper;
         }
 
-        // GetAll + (pagination, org, tech)
-        // TODO - add pagination and add filters
+
+        [HttpGet("GetAll")]
+        public async Task<ActionResult<IEnumerable<JobWithOrgDto>>> Test([FromQuery] JobFilter filter)
+        {
+            IEnumerable<Job> jobs = await jobService.GetAllWithOrgAndFiltersAsync(filter);
+
+            IEnumerable<JobWithOrgDto> jobsDto = mapper.Map<IEnumerable<Job>, IEnumerable<JobWithOrgDto>>(jobs);
+            
+            return Ok(jobsDto);
+        }
+
+
         [HttpGet]
         public async Task<ActionResult<IEnumerable<JobWithOrgDto>>> Get()
         {
