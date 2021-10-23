@@ -10,6 +10,7 @@ namespace JobFinder.Core
     {
         IJobRepository Jobs { get; }
         IExperienceLevelRepository ExperienceLevels { get; }
+        IEmploymentTypeRepository EmploymentTypes { get; }
         Task<int> CommitAsync();
     }
 }
