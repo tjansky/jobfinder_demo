@@ -1,0 +1,102 @@
+[
+  {
+    "id": 1,
+    "name": ".Net"
+  },
+  {
+    "id": 2,
+    "name": "Angular"
+  },
+  {
+    "id": 3,
+    "name": "SQL"
+  },
+  {
+    "id": 4,
+    "name": "JavaScript"
+  },
+  {
+    "id": 5,
+    "name": "TypeScript"
+  },
+  {
+    "id": 6,
+    "name": "jQuery"
+  },
+  {
+    "id": 7,
+    "name": "HTML"
+  },
+  {
+    "id": 8,
+    "name": "CSS"
+  },
+  {
+    "id": 9,
+    "name": "Go"
+  },
+  {
+    "id": 10,
+    "name": "Rust"
+  },
+  {
+    "id": 11,
+    "name": "React"
+  },
+  {
+    "id": 12,
+    "name": "Vue"
+  },
+  {
+    "id": 13,
+    "name": "PHP"
+  },
+  {
+    "id": 14,
+    "name": "C#"
+  },
+  {
+    "id": 15,
+    "name": "C++"
+  },
+  {
+    "id": 16,
+    "name": "C"
+  },
+  {
+    "id": 17,
+    "name": "Java"
+  },
+  {
+    "id": 18,
+    "name": "Spring"
+  },
+  {
+    "id": 19,
+    "name": "NodeJs"
+  },
+  {
+    "id": 20,
+    "name": "Kotlin"
+  },
+  {
+    "id": 21,
+    "name": "Android"
+  },
+  {
+    "id": 22,
+    "name": "IOS"
+  },
+  {
+    "id": 23,
+    "name": "Swift"
+  },
+  {
+    "id": 24,
+    "name": "Bootstrap"
+  },
+  {
+    "id": 25,
+    "name": "Solidity"
+  }
+]
