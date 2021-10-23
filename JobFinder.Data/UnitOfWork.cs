@@ -15,6 +15,7 @@ namespace JobFinder.Data
         private ExperienceLevelRepository _experienceLevelRepository;
         private EmploymentTypeRepository _employmentTypeRepository;
         private TechnologyRepository _technologyRepository;
+        private OrganizationRepository _organizationRepository;
         public UnitOfWork(JobFinderDbContext context)
         {
             this._context = context;
@@ -24,6 +25,7 @@ namespace JobFinder.Data
         public IExperienceLevelRepository ExperienceLevels => _experienceLevelRepository ?? new ExperienceLevelRepository(_context);
         public IEmploymentTypeRepository EmploymentTypes => _employmentTypeRepository ?? new EmploymentTypeRepository(_context);
         public ITechnologyRepository Technologies => _technologyRepository ?? new TechnologyRepository(_context);
+        public IOrganizationRepository Organizations => _organizationRepository ?? new OrganizationRepository(_context);
 
         public async Task<int> CommitAsync()
         {

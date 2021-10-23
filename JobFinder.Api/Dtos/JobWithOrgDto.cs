@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace JobFinder.Api.Dtos
 {
-    public class JobDto
+    public class JobWithOrgDto
     {
         public int Id { get; set; }
         public string Name { get; set; }
@@ -18,5 +18,11 @@ namespace JobFinder.Api.Dtos
         public int MinSalary { get; set; }
         public int MaxSalary { get; set; }
         public DateTime PostDate { get; set; }
+
+        public int OrganizationId { get; set; }
+        public virtual OrganizationDto Organization { get; set; }
+        public virtual ICollection<TechnologyDto> Technologies { get; set; }
+        public virtual ICollection<ExperienceLevelDto> ExperienceLevels { get; set; }
+        public virtual ICollection<EmploymentTypeDto> EmploymentTypes { get; set; }
     }
 }

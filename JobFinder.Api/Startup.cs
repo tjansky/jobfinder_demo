@@ -38,6 +38,7 @@ namespace JobFinder.Api
             services.AddTransient<IExperienceLevelService, ExperienceLevelService>();
             services.AddTransient<IEmploymentTypeService, EmploymentTypeService>();
             services.AddTransient<ITechnologyService, TechnologyService>();
+            services.AddTransient<IOrganizationService, OrganizationService>();
 
             services.AddAutoMapper(typeof(Startup));
 

@@ -26,11 +26,11 @@ namespace JobFinder.Api.Controllers
         // GetAll + (pagination, org, tech)
         // TODO - add pagination and add filters
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<JobDto>>> Get()
+        public async Task<ActionResult<IEnumerable<JobWithOrgDto>>> Get()
         {
             IEnumerable<Job> jobs = await jobService.GetAllWithOrg();
 
-            IEnumerable<JobDto> jobsDto = mapper.Map<IEnumerable<Job>, IEnumerable<JobDto>>(jobs);
+            IEnumerable<JobWithOrgDto> jobsDto = mapper.Map<IEnumerable<Job>, IEnumerable<JobWithOrgDto>>(jobs);
             
             return Ok(jobsDto);
         }
