@@ -12,6 +12,7 @@ namespace JobFinder.Data
     {
         private readonly JobFinderDbContext _context;
         private JobRepository _jobRepository;
+        private ExperienceLevelRepository _experienceLevelRepository;
 
         public UnitOfWork(JobFinderDbContext context)
         {
@@ -19,6 +20,7 @@ namespace JobFinder.Data
         }
 
         public IJobRepository Jobs => _jobRepository = _jobRepository ?? new JobRepository(_context);
+        public IExperienceLevelRepository ExperienceLevels => _experienceLevelRepository ?? new ExperienceLevelRepository(_context);
 
         public async Task<int> CommitAsync()
         {

@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "name": "Intern"
+  },
+  {
+    "id": 2,
+    "name": "Junior"
+  },
+  {
+    "id": 3,
+    "name": "Mid"
+  },
+  {
+    "id": 4,
+    "name": "Senior"
+  },
+  {
+    "id": 5,
+    "name": "Lead"
+  }
+]

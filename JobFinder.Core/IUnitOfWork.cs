@@ -9,6 +9,7 @@ namespace JobFinder.Core
     public interface IUnitOfWork : IDisposable
     {
         IJobRepository Jobs { get; }
+        IExperienceLevelRepository ExperienceLevels { get; }
         Task<int> CommitAsync();
     }
 }

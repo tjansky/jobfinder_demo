@@ -35,6 +35,7 @@ namespace JobFinder.Api
         {
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddTransient<IJobService, JobService>();
+            services.AddTransient<IExperienceLevelService, ExperienceLevelService>();
 
             services.AddAutoMapper(typeof(Startup));
 

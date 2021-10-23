@@ -24,6 +24,7 @@ namespace JobFinder.Api.Controllers
         }
 
         // GetAll + (pagination, org, tech)
+        // TODO - add pagination and add filters
         [HttpGet]
         public async Task<ActionResult<IEnumerable<JobDto>>> Get()
         {
@@ -61,7 +62,7 @@ namespace JobFinder.Api.Controllers
         // SetInactiveByID 
         // TODO: testirati
         [HttpPost("changeActivity/{id}/{activity}")]
-        public async Task<ActionResult> ChangeActivity(int id, bool activity)
+        public async Task<ActionResult<Job>> ChangeActivity(int id, bool activity)
         {
             Job job = await jobService.GetById(id);
 
