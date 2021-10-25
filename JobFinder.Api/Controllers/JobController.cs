@@ -6,6 +6,7 @@ using AutoMapper;
 using JobFinder.Api.Dtos;
 using JobFinder.Core.Models;
 using JobFinder.Core.Models.Settings;
+using JobFinder.Core.Paging;
 using JobFinder.Core.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -26,13 +27,23 @@ namespace JobFinder.Api.Controllers
 
 
         [HttpGet("GetAll")]
-        public async Task<ActionResult<IEnumerable<JobWithOrgDto>>> Test([FromQuery] JobFilter filter)
+        public async Task<ActionResult<JobsWithPaginationData>> Test([FromQuery]PagingParameters paging, [FromQuery]JobFilter filter)
         {
-            IEnumerable<Job> jobs = await jobService.GetAllWithOrgAndFiltersAsync(filter);
+            PagedList<Job> pagedJobs = await jobService.GetAllWithOrgFiltersAndPagination(paging, filter);
 
-            IEnumerable<JobWithOrgDto> jobsDto = mapper.Map<IEnumerable<Job>, IEnumerable<JobWithOrgDto>>(jobs);
-            
-            return Ok(jobsDto);
+            ICollection<JobWithOrgDto> jobsDto = mapper.Map<ICollection<Job>, ICollection<JobWithOrgDto>>(pagedJobs);
+
+            PaginationDto pagination = new PaginationDto 
+            {
+                TotalPages = pagedJobs.TotalPages,
+                PageSize = pagedJobs.PageSize,
+                CurrentPage = pagedJobs.CurrentPage,
+                TotalCount = pagedJobs.TotalCount
+            };
+
+            JobsWithPaginationData jobsWithPagination = new JobsWithPaginationData {Jobs = jobsDto, Pagination = pagination}; 
+
+            return Ok(jobsWithPagination);
         }
 
 

@@ -21,8 +21,8 @@ namespace JobFinder.Api.Dtos
 
         public int OrganizationId { get; set; }
         public virtual OrganizationDto Organization { get; set; }
-        public virtual ICollection<TechnologyDto> Technologies { get; set; }
-        public virtual ICollection<ExperienceLevelDto> ExperienceLevels { get; set; }
-        public virtual ICollection<EmploymentTypeDto> EmploymentTypes { get; set; }
+        //public virtual ICollection<TechnologyDto> Technologies { get; set; }
+        //public virtual ICollection<ExperienceLevelDto> ExperienceLevels { get; set; }
+        //public virtual ICollection<EmploymentTypeDto> EmploymentTypes { get; set; }
     }
 }
