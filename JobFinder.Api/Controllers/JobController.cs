@@ -64,6 +64,11 @@ namespace JobFinder.Api.Controllers
         {
             Job job = await jobService.GetByIdWithAll(id);
 
+            if (job == null) 
+            {
+                return BadRequest("There is no job with id: " + id);
+            }
+
             var detailedJobDto = mapper.Map<Job, JobWithAllDto>(job);
             
             return Ok(detailedJobDto);
@@ -76,6 +81,11 @@ namespace JobFinder.Api.Controllers
         {
             Job job = await jobService.GetById(id);
 
+            if (job == null) 
+            {
+                return BadRequest("There is no job with id: " + id);
+            }
+
             await jobService.Delete(job);
             
             return Ok("Nothing for now, guess it was deleted");
@@ -87,6 +97,11 @@ namespace JobFinder.Api.Controllers
         public async Task<ActionResult<Job>> ChangeActivity(int id, bool activity)
         {
             Job job = await jobService.GetById(id);
+
+            if (job == null) 
+            {
+                return BadRequest("There is no job with id: " + id);
+            }
 
             return Ok(await jobService.ChangeActivity(job, activity));
         }
