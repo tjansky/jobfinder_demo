@@ -56,7 +56,7 @@ namespace JobFinder.Api
                     options.TokenValidationParameters = new TokenValidationParameters
                     {
                         ValidateIssuerSigningKey = true,
-                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("")),
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("bla12345678910")),
                         ValidateIssuer = false,
                         ValidateAudience = false
                     };
