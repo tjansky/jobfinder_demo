@@ -43,6 +43,7 @@ namespace JobFinder.Api
             services.AddTransient<IEmploymentTypeService, EmploymentTypeService>();
             services.AddTransient<ITechnologyService, TechnologyService>();
             services.AddTransient<IOrganizationService, OrganizationService>();
+            services.AddTransient<IUserService, UserService>();
 
             services.AddAutoMapper(typeof(Startup));
 
@@ -56,7 +57,7 @@ namespace JobFinder.Api
                     options.TokenValidationParameters = new TokenValidationParameters
                     {
                         ValidateIssuerSigningKey = true,
-                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("bla12345678910")),
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("this is my custom Secret key for authnetication")),
                         ValidateIssuer = false,
                         ValidateAudience = false
                     };

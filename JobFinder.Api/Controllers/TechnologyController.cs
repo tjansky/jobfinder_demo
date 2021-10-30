@@ -6,6 +6,7 @@ using AutoMapper;
 using JobFinder.Api.Dtos;
 using JobFinder.Core.Models;
 using JobFinder.Core.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace JobFinder.Api.Controllers
@@ -23,6 +24,7 @@ namespace JobFinder.Api.Controllers
             this.mapper = mapper;
         }
 
+        [Authorize]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<TechnologyDto>>> GetAllTechnologies()
         {

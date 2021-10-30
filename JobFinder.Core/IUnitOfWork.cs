@@ -13,6 +13,7 @@ namespace JobFinder.Core
         IEmploymentTypeRepository EmploymentTypes { get; }
         ITechnologyRepository Technologies { get; }
         IOrganizationRepository Organizations { get; }
+        IUserRepository Users { get; }
         Task<int> CommitAsync();
     }
 }

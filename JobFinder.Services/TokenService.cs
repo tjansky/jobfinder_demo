@@ -16,7 +16,7 @@ namespace JobFinder.Services
         private readonly SymmetricSecurityKey _key;
         public TokenService()
         {
-            _key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("bla12345678910"));
+            _key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("this is my custom Secret key for authnetication"));
         }
 
         public string CreateToken(User user)
